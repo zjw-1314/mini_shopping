@@ -9,7 +9,9 @@ Page({
     // 轮播图数组
     swiperList:[],
     // 导航数组
-    cateList:[]
+    cateList:[],
+    // 楼层数据
+    floorList:[]
   },
 
   /**
@@ -28,11 +30,12 @@ Page({
     // })
      this.getSwiperList();
      this.getCateList();
+     this.getFloorList();
   },
 
   // 获取轮播图数据
   getSwiperList(){
-    request({url:'https://api-hmugo-web.itheima.net/api/public/v1/home/swiperdata'})
+    request({url:'/home/swiperdata'})
     .then(res=>{
       console.log(res)
       this.setData({
@@ -43,11 +46,22 @@ Page({
   
   // 获取分类导航数据
   getCateList(){
-    request({url:'https://api-hmugo-web.itheima.net/api/public/v1/home/catitems'})
+    request({url:'/home/catitems'})
     .then(res=>{
       this.setData({
         cateList:res.data.message
       })
     })
+  },
+
+  // 获取楼层数据
+  getFloorList(){
+    request({url:'/home/floordata'})
+    .then(res=>{
+      this.setData({
+        floorList:res.data.message
+      })
+    })
   }
+
 })
