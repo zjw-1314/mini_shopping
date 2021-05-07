@@ -25,6 +25,6 @@ tabs="{{tabs}}" bindtabsItemChange="handleTabsChange"
       </navigator>
     </view>
   </block>
-  <block wx:if="{{tabs[1].isActive}}">1</block>
-  <block wx:if="{{tabs[2].isActive}}">2</block>
+  <block wx:if="{{tabs[1].isActive}}">11</block>
+  <block wx:if="{{tabs[2].isActive}}">22</block>
 </Tabs>
